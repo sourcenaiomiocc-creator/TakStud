@@ -3,157 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TakStud - Sistema de Gestão Acadêmica</title>
+    <title>TakStud - Apresentação Comercial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Fundo Animado -->
+    <div class="background-gradient"></div>
+
+    <!-- Barra de Navegação -->
     <nav class="navbar">
-        <div class="logo">TakStud ✨</div>
-        <div class="slide-info">Sistema de Gestão Acadêmica</div>
+        <div class="logo"><span class="icon">🎓</span> TakStud</div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
     </nav>
 
     <main class="slider-container">
 
-        <!-- Slide 1: Capa -->
-        <section class="slide active home-slide">
+        <!-- Slide 1: Capa Steve Jobs -->
+        <section class="slide active">
             <div class="content centered">
-                <div class="icon-large">🎓</div>
-                <h1>TakStud</h1>
-                <h2>Sistema de Gestão Acadêmica</h2>
-                <p>A solução completa para conectar professores, alunos e responsáveis.</p>
-                <button class="cta-btn" onclick="nextSlide()">Conhecer Funcionalidades</button>
+                <div class="badge">Inovação na Educação</div>
+                <h1 class="big-title">TakStud</h1>
+                <p class="quote-text">
+                    "A tecnologia não é nada. O importante é que você tenha fé nas pessoas... Se você der a elas ferramentas, elas farão coisas maravilhosas."
+                </p>
+                <p class="quote-author">— Steve Jobs</p>
+                <br>
+                <button class="cta-btn" onclick="nextSlide()">Conhecer a Ferramenta ➔</button>
             </div>
         </section>
 
-        <!-- Slide 2: Acesso e Login -->
+        <!-- Slide 2: O Problema -->
         <section class="slide">
             <div class="content centered">
-                <h2>Acesso Simplificado e Seguro 🔐</h2>
-                <p>Perfis dedicados para cada tipo de usuário com métodos de login específicos.</p>
-                
-                <div class="cards-container">
-                    <div class="feature-card">
-                        <div class="card-icon">👨‍🏫</div>
-                        <h3>Para Professores</h3>
-                        <p>Login exclusivo via <strong>Código de Acesso</strong>.</p>
-                        <p class="card-detail">Segurança e controle administrativo.</p>
+                <h2>O Problema da Comunicação 📉</h2>
+                <p>Escolas ainda sofrem com métodos analógicos na era digital.</p>
+                <div class="grid-2">
+                    <div class="glass-card warning">
+                        <h3>🚫 Bilhetes de Papel</h3>
+                        <p>Ineficientes, caros e se perdem facilmente.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="card-icon">👨‍👩‍👧‍👦</div>
-                        <h3>Para Alunos e Responsáveis</h3>
-                        <p>Acesso rápido via <strong>RA do Aluno</strong>.</p>
-                        <p class="card-detail">Sem necessidade de decorar senhas complexas.</p>
+                    <div class="glass-card warning">
+                        <h3>🚫 Grupos de Mensagem</h3>
+                        <p>Informações descentralizadas e sem privacidade.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 3: Área do Professor (Resumo) -->
+        <!-- Slide 3: A Solução TakStud -->
         <section class="slide">
             <div class="content centered">
-                <h2>Área do Professor: Controle Total 📊</h2>
-                <p>Um painel de controle completo para gerenciar a sala de aula na palma da mão.</p>
-                
-                <div class="dashboard-preview">
-                    <h3>Resumo Rápido</h3>
-                    <div class="stats-row">
-                        <div class="stat-box">
-                            <span class="stat-label">Tarefas Ativas</span>
-                            <span class="stat-icon">📋</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-label">Total de Alunos</span>
-                            <span class="stat-icon">👥</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-label">Presença Média</span>
-                            <span class="stat-icon">✅</span>
-                        </div>
+                <h2>A Solução TakStud ✨</h2>
+                <p>Um ecossistema digital completo em um aplicativo nativo Android.</p>
+                <div class="features-row">
+                    <div class="mini-feature">📱 App Nativo</div>
+                    <div class="mini-feature">⚡ Alta Performance</div>
+                    <div class="mini-feature">☁️ 100% Cloud</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Tecnologia Firebase -->
+        <section class="slide">
+            <div class="content centered">
+                <h2>Backend Google Firebase 🔥</h2>
+                <p>Infraestrutura de classe mundial para garantir estabilidade.</p>
+                <div class="tech-grid">
+                    <div class="glass-card">
+                        <div class="icon">⚡</div>
+                        <h3>Realtime Database</h3>
+                        <p>Sincronização de dados em milissegundos.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="icon">☁️</div>
+                        <h3>Cloud Storage</h3>
+                        <p>Backup automático e segurança criptografada.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 4: Funcionalidades do Professor -->
+        <!-- Slide 5: Segurança e Acesso -->
         <section class="slide">
             <div class="content centered">
-                <h2>Ferramentas de Gestão 🛠️</h2>
-                <p>O que o professor pode fazer no TakStud?</p>
-                
-                <ul class="features-grid-list">
-                    <li>
-                        <strong>📝 Gerenciar Tarefas</strong>
-                        <br>Crie, edite e acompanhe tarefas e avaliações da turma.
-                    </li>
-                    <li>
-                        <strong>👥 Gerenciar Alunos</strong>
-                        <br>Cadastre, edite e organize os alunos nas suas turmas.
-                    </li>
-                    <li>
-                        <strong>✅ Gerenciar Presença</strong>
-                        <br>Realize chamadas e acompanhe a frequência dos alunos em tempo real.
-                    </li>
-                    <li>
-                        <strong>📅 Gerenciar Horários</strong>
-                        <br>Organize e mantenha a grade de aulas sempre atualizada.
-                    </li>
-                    <li>
-                        <strong>📢 Gerenciar Avisos</strong>
-                        <br>Envie comunicados importantes diretamente para os pais.
-                    </li>
+                <h2>Protocolos de Segurança 🔒</h2>
+                <p>Controle de acesso rigoroso para proteção dos dados.</p>
+                <div class="login-types">
+                    <div class="login-card professor">
+                        <span class="role">Professor</span>
+                        <h3>Unique ID</h3>
+                        <p>Chave de acesso administrativa criptografada.</p>
+                    </div>
+                    <div class="divider">vs</div>
+                    <div class="login-card student">
+                        <span class="role">Aluno / Pais</span>
+                        <h3>R.A. Token</h3>
+                        <p>Login simplificado via Registro Acadêmico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Professor - Gestão de Turmas -->
+        <section class="slide">
+            <div class="content centered">
+                <h2>Dashboard do Professor 👩‍🏫</h2>
+                <p>Otimização do fluxo de trabalho docente.</p>
+                <ul class="check-list">
+                    <li>✅ <strong>Gestão de Perfil:</strong> Cadastro intuitivo de alunos.</li>
+                    <li>✅ <strong>Segregação de Dados:</strong> Organização inteligente por turmas.</li>
+                    <li>✅ <strong>Data Access:</strong> Histórico acadêmico sempre disponível.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Slide 5: Área do Responsável -->
+        <!-- Slide 7: Professor - Rotina Diária -->
         <section class="slide">
             <div class="content centered">
-                <h2>Área do Responsável: Acompanhamento 👁️</h2>
-                <p>Tudo o que os pais precisam saber sobre a vida escolar do aluno.</p>
-                
-                <div class="cards-container">
-                    <div class="info-card">
-                        <h3>📅 Próximas Aulas</h3>
-                        <p>Visualize a grade de horários e saiba qual é a próxima aula.</p>
+                <h2>Ferramentas Pedagógicas 🛠️</h2>
+                <p>Recursos digitais para o dia a dia.</p>
+                <div class="grid-3">
+                    <div class="glass-card small">
+                        <h3>📝 Tarefas</h3>
+                        <p>Criação e distribuição de atividades.</p>
                     </div>
-                    <div class="info-card">
-                        <h3>📢 Avisos Importantes</h3>
-                        <p>Receba comunicados da escola e não perca nenhuma informação.</p>
+                    <div class="glass-card small">
+                        <h3>🙋‍♂️ Chamada</h3>
+                        <p>Registro de presença one-tap.</p>
                     </div>
-                    <div class="info-card">
-                        <h3>📝 Tarefas e Provas</h3>
-                        <p>Monitore as atividades pendentes e datas de avaliações.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>✅ Frequência</h3>
-                        <p>Acompanhe o registro de presença e faltas do aluno.</p>
+                    <div class="glass-card small">
+                        <h3>📊 Notas</h3>
+                        <p>Lançamento ágil de avaliações.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 6: Encerramento -->
-        <section class="slide final-slide">
+        <!-- Slide 8: Professor - Avisos -->
+        <section class="slide">
             <div class="content centered">
-                <h1>TakStud</h1>
-                <p>Organização para a escola, facilidade para os professores e tranquilidade para os pais.</p>
-                
-                <div class="final-actions">
-                    <button class="cta-btn big" onclick="goToSlide(0)">↺ Reiniciar Apresentação</button>
+                <h2>Comunicação Push 📢</h2>
+                <p>Mensageria oficial direta para os dispositivos dos pais.</p>
+                <div class="mock-notification">
+                    <div class="notif-header">Nova Notificação</div>
+                    <div class="notif-body">
+                        "Comunicado: O boletim do 3º Bimestre já está disponível no app."
+                    </div>
+                    <div class="notif-status">Entregue para 32 dispositivos</div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Pais - Visão Geral -->
+        <section class="slide">
+            <div class="content centered">
+                <h2>Interface do Responsável 👨‍👩‍👧‍👦</h2>
+                <p>Monitoramento passivo e não invasivo.</p>
+                <div class="stats-dashboard">
+                    <div class="stat-item">
+                        <span class="value">95%</span>
+                        <span class="label">Attendance</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="value">8.5</span>
+                        <span class="label">GPA Médio</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="value">2</span>
+                        <span class="label">Tasks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Aluno - Organização -->
+        <section class="slide">
+            <div class="content centered">
+                <h2>Student Planner 📅</h2>
+                <p>Grade horária digital sincronizada.</p>
+                <div class="mock-schedule">
+                    <div class="schedule-item active">
+                        <span class="time">07:30</span>
+                        <span class="subject">Matemática</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">08:20</span>
+                        <span class="subject">História</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">09:10</span>
+                        <span class="subject">Português</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Resumo dos Benefícios -->
+        <section class="slide">
+            <div class="content centered">
+                <h2>Por que o TakStud? 🚀</h2>
+                <div class="grid-2">
+                    <ul class="benefit-list">
+                        <li>🕒 <strong>Time Saving:</strong> Automação de processos repetitivos.</li>
+                        <li>🌳 <strong>Paperless:</strong> Eliminação do uso de papel.</li>
+                    </ul>
+                    <ul class="benefit-list">
+                        <li>🔒 <strong>Security:</strong> Dados criptografados no Google Cloud.</li>
+                        <li>🤝 <strong>Engagement:</strong> Maior participação familiar.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Encerramento -->
+        <section class="slide">
+            <div class="content centered">
+                <div class="final-logo">TakStud</div>
+                <h1>A tecnologia a serviço da educação.</h1>
+                <p>Leve essa inovação para sua escola.</p>
+                <br>
+                <h2 class="thank-you">MUITO OBRIGADO!</h2>
+                <p class="final-phrase">"A melhor maneira de prever o futuro é inventá-lo." — Alan Kay</p>
+                <br><br>
+                <button class="restart-btn" onclick="goToSlide(0)">↺ Reiniciar Apresentação</button>
             </div>
         </section>
 
     </main>
 
-    <!-- Navegação -->
-    <button class="nav-arrow prev" id="prevBtn">❮</button>
-    <button class="nav-arrow next" id="nextBtn">❯</button>
-    <div class="dots-container" id="indicators"></div>
+    <div class="controls">
+        <button class="nav-btn" id="prevBtn">❮</button>
+        <div class="indicators" id="indicators"></div>
+        <button class="nav-btn" id="nextBtn">❯</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

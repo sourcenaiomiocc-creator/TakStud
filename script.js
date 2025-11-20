@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     const dotsContainer = document.getElementById('indicators');
+    const progressBar = document.getElementById('progressBar');
     
     let currentIndex = 0;
     const totalSlides = slides.length;
 
-    // Gerar bolinhas de navegação automaticamente
+    // Inicialização dos indicadores
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -18,38 +19,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dots = document.querySelectorAll('.dot');
 
-    window.goToSlide = function(index) {
-        slides[currentIndex].classList.remove('active');
-        dots[currentIndex].classList.remove('active');
-
-        currentIndex = index;
-
+    // Atualiza Slides, Bolinhas e Barra de Progresso
+    function updateUI() {
+        // Slides
+        slides.forEach(slide => slide.classList.remove('active'));
         slides[currentIndex].classList.add('active');
+
+        // Dots
+        dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
+
+        // Barra de Progresso (Cálculo de porcentagem)
+        const progress = ((currentIndex + 1) / totalSlides) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    window.goToSlide = function(index) {
+        currentIndex = index;
+        updateUI();
     }
 
     window.nextSlide = function() {
-        let newIndex = currentIndex + 1;
-        if (newIndex >= totalSlides) newIndex = 0;
-        goToSlide(newIndex);
+        currentIndex++;
+        if (currentIndex >= totalSlides) currentIndex = 0;
+        updateUI();
     }
 
     window.prevSlide = function() {
-        let newIndex = currentIndex - 1;
-        if (newIndex < 0) newIndex = totalSlides - 1;
-        goToSlide(newIndex);
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = totalSlides - 1;
+        updateUI();
     }
 
-    // Eventos de clique
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Navegação pelo teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === ' ') {
-            nextSlide();
-        } else if (e.key === 'ArrowLeft') {
-            prevSlide();
-        }
+        if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
     });
+
+    // Chamada inicial para setar a barra de progresso
+    updateUI();
 });
