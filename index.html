@@ -1,248 +1,361 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TakStud - Apresentação Comercial</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>TakStud - Apresentação do Projeto</title>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    
+    <!-- Reveal.js Theme (White) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css" id="theme">
+
+    <!-- Tailwind CSS (para layout interno dos slides) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS para Identidade Visual TakStud -->
+    <style>
+        :root {
+            --takstud-teal: #0F766E;
+            --takstud-teal-light: #14b8a6;
+            --takstud-orange: #F97316;
+            --takstud-dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        .reveal {
+            font-family: 'Inter', sans-serif !important;
+            color: var(--takstud-dark);
+        }
+
+        /* Títulos */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: none;
+            color: var(--takstud-teal);
+        }
+
+        /* Destaques em Laranja */
+        .highlight {
+            color: var(--takstud-orange);
+            font-weight: bold;
+        }
+
+        /* Listas */
+        .reveal ul {
+            display: block;
+            margin-left: 1em;
+        }
+        
+        .reveal ul li {
+            margin-bottom: 0.5em;
+            list-style-type: none; /* Remove padrão para usar ícones customizados se desejar */
+            position: relative;
+            padding-left: 1.5em;
+        }
+
+        .reveal ul li::before {
+            content: '•';
+            color: var(--takstud-orange);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Cards e Boxes */
+        .tech-card {
+            background: rgba(15, 118, 110, 0.05);
+            border-left: 5px solid var(--takstud-teal);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+
+        /* Ajustes de código/monoespaçado */
+        .code-snippet {
+            font-family: 'Courier New', monospace;
+            background: #f1f5f9;
+            color: #d946ef; /* Um roxo para destacar código */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Background Gradient sutil para os slides */
+        .reveal .slides section {
+            padding: 20px;
+        }
+        
+        /* Rodapé fixo (opcional, via CSS global do reveal) */
+        .footer-logo {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 14px;
+            color: #ccc;
+            z-index: 10;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Fundo Animado -->
-    <div class="background-gradient"></div>
+    <div class="reveal">
+        <div class="slides">
 
-    <!-- Barra de Navegação -->
-    <nav class="navbar">
-        <div class="logo"><span class="icon">🎓</span> TakStud</div>
-        <div class="progress-bar-container">
-            <div class="progress-bar" id="progressBar"></div>
+            <!-- Slide 1: Título -->
+            <section data-background-gradient="linear-gradient(to bottom right, #f0fdfa, #ffffff)">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <div class="mb-6">
+                        <i class="fas fa-graduation-cap fa-4x" style="color: var(--takstud-teal);"></i>
+                    </div>
+                    <h1 style="font-size: 4em; margin-bottom: 10px;">TakStud</h1>
+                    <h3 style="color: var(--takstud-orange); font-weight: 400;">A Escola na Palma da Mão.</h3>
+                    <div class="mt-12 pt-8 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">Apresentação do Projeto de Aplicativo Android</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Visão Geral -->
+            <section>
+                <h2><i class="fas fa-info-circle mr-3 text-3xl"></i>O Que é o TakStud?</h2>
+                <div class="text-left mt-8 text-2xl">
+                    <ul>
+                        <li>Um aplicativo moderno para conectar <strong>professores e pais</strong> de forma simples e direta.</li>
+                        <li>Acaba com o papelzinho na mochila: centraliza <span class="highlight">horários</span>, <span class="highlight">avisos</span>, <span class="highlight">trabalhos</span> e <span class="highlight">provas</span> no celular.</li>
+                        <li>Feito para ser <strong>fácil de usar</strong> por qualquer pessoa, mesmo quem não tem muita intimidade com tecnologia.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 3: Arquitetura e Tecnologias (Simplificado) -->
+            <section>
+                <h2>Como foi Construído?</h2>
+                <p class="text-gray-500 mb-6 text-lg">Usamos tecnologias confiáveis para garantir segurança e rapidez.</p>
+                <div class="grid grid-cols-2 gap-8 mt-4 text-left">
+                    <!-- Coluna 1 -->
+                    <div class="tech-card bg-teal-50">
+                        <h4 class="flex items-center mb-4 text-xl font-bold border-b border-teal-200 pb-2">
+                            <i class="fab fa-google mr-2"></i> Padrão Google
+                        </h4>
+                        <ul class="text-xl space-y-2">
+                            <li><strong>Kotlin:</strong> A linguagem oficial e moderna do Android.</li>
+                            <li><strong>Visual Moderno:</strong> Telas bonitas e fáceis de navegar.</li>
+                            <li><strong>Segurança:</strong> Seus dados protegidos na nuvem do Google.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Coluna 2 -->
+                    <div class="tech-card bg-orange-50" style="border-left-color: var(--takstud-orange);">
+                        <h4 class="flex items-center mb-4 text-xl font-bold border-b border-orange-200 pb-2" style="color: var(--takstud-orange);">
+                            <i class="fas fa-cogs mr-2"></i> Qualidade Técnica
+                        </h4>
+                        <ul class="text-xl space-y-2">
+                            <li><strong>Organização:</strong> O código é "arrumado" para facilitar atualizações futuras.</li>
+                            <li><strong>Sem Travamentos:</strong> Feito para rodar suave, mesmo em celulares mais simples.</li>
+                            <li><strong>Backup Automático:</strong> Salvamos tudo para você não perder nada.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Ambiente e Ferramentas (Simplificado) -->
+            <section>
+                <h2>Ferramentas Utilizadas</h2>
+                <div class="text-left mt-6 text-2xl">
+                    <ul>
+                        <li><i class="fas fa-laptop-code w-8 text-center mr-2 text-gray-400"></i> <strong>Criação:</strong> Utilizamos o software oficial de desenvolvimento Android (Android Studio).</li>
+                        <li><i class="fas fa-brain w-8 text-center mr-2 text-gray-400"></i> <strong>Inteligência Artificial:</strong> Usamos IA (Gemini) para ajudar a escrever o código mais rápido e com menos erros.</li>
+                        <li><i class="fas fa-code-branch w-8 text-center mr-2 text-gray-400"></i> <strong>Histórico:</strong> Mantemos um histórico de cada alteração feita no projeto (Git).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 5: Portal do Professor -->
+            <section>
+                <h2>Para o Professor</h2>
+                <h4 class="text-gray-500 font-light mb-8">Menos burocracia, mais ensino</h4>
+                
+                <div class="flex items-start justify-center">
+                    <div class="w-full text-left bg-white shadow-lg p-6 rounded-lg border-t-4 border-teal-600">
+                        <p class="mb-4">Um painel de controle simples para gerenciar a turma em segundos.</p>
+                        <ul class="text-2xl space-y-3">
+                            <li><i class="fas fa-tasks mr-2 text-teal-600"></i> <strong>Tarefas e Provas:</strong> Crie avisos de provas e trabalhos com poucos cliques.</li>
+                            <li><i class="fas fa-bullhorn mr-2 text-teal-600"></i> <strong>Avisos Gerais:</strong> Envie recados importantes para todos os pais de uma vez.</li>
+                            <li><i class="far fa-calendar-alt mr-2 text-teal-600"></i> <strong>Agenda:</strong> Organize o horário das aulas sem confusão.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Portal dos Pais -->
+            <section>
+                <h2>Para os Pais</h2>
+                <h4 class="text-gray-500 font-light mb-8">Acompanhe tudo de perto</h4>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                    <div class="col-span-3 mb-4 p-4 bg-orange-100 rounded border border-orange-200">
+                        <i class="fas fa-filter text-orange-500 mr-2"></i>
+                        <strong>Filtro Inteligente</strong><br>
+                        <span class="text-sm">Você vê apenas o que importa para a turma do seu filho. Sem bagunça.</span>
+                    </div>
+
+                    <div class="p-4 bg-gray-50 rounded shadow-sm">
+                        <div class="text-teal-700 font-bold mb-2"><i class="fas fa-book-open"></i> Lição de Casa</div>
+                        <p class="text-sm">Saiba exatamente quando são as provas e entregas de trabalhos.</p>
+                    </div>
+
+                    <div class="p-4 bg-gray-50 rounded shadow-sm">
+                        <div class="text-teal-700 font-bold mb-2"><i class="fas fa-bell"></i> Recados</div>
+                        <p class="text-sm">Receba convites para reuniões e avisos da diretoria.</p>
+                    </div>
+
+                    <div class="p-4 bg-gray-50 rounded shadow-sm">
+                        <div class="text-teal-700 font-bold mb-2"><i class="fas fa-clock"></i> Horários</div>
+                        <p class="text-sm">Confira a grade de aulas para ajudar a organizar a mochila.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Banco de Dados (Visual) -->
+            <section>
+                <h2>Onde ficam as informações?</h2>
+                <p class="text-xl mb-8">Usamos a tecnologia de nuvem do Google para garantir que nada se perca.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Collection Tasks -->
+                    <div class="bg-white p-4 rounded-lg shadow-xl border border-gray-200">
+                        <div class="flex items-center border-b border-gray-100 pb-2 mb-2 text-teal-700 font-bold">
+                            <i class="fas fa-clipboard-list mr-2"></i> Tarefas
+                        </div>
+                        <p class="text-sm text-gray-600">Aqui guardamos:</p>
+                        <ul class="text-sm text-gray-500 mt-2">
+                            <li>• Título do trabalho</li>
+                            <li>• Descrição do que fazer</li>
+                            <li>• Data de entrega</li>
+                        </ul>
+                    </div>
+
+                    <!-- Collection Notices -->
+                    <div class="bg-white p-4 rounded-lg shadow-xl border border-gray-200">
+                        <div class="flex items-center border-b border-gray-100 pb-2 mb-2 text-teal-700 font-bold">
+                            <i class="fas fa-envelope-open-text mr-2"></i> Avisos
+                        </div>
+                        <p class="text-sm text-gray-600">Aqui guardamos:</p>
+                        <ul class="text-sm text-gray-500 mt-2">
+                            <li>• Título do aviso</li>
+                            <li>• Mensagem completa</li>
+                            <li>• Nível de urgência</li>
+                        </ul>
+                    </div>
+
+                    <!-- Collection Schedules -->
+                    <div class="bg-white p-4 rounded-lg shadow-xl border border-gray-200">
+                        <div class="flex items-center border-b border-gray-100 pb-2 mb-2 text-teal-700 font-bold">
+                            <i class="far fa-clock mr-2"></i> Aulas
+                        </div>
+                        <p class="text-sm text-gray-600">Aqui guardamos:</p>
+                        <ul class="text-sm text-gray-500 mt-2">
+                            <li>• Dia da semana</li>
+                            <li>• Matéria (ex: Matemática)</li>
+                            <li>• Horário de início/fim</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Funcionalidades Chave (Simplificado) -->
+            <section>
+                <h2>Por que o TakStud é diferente?</h2>
+                <div class="mt-8 space-y-6 text-left">
+                    
+                    <div class="flex items-center p-4 bg-white shadow rounded-lg transform transition hover:scale-105">
+                        <div class="p-4 bg-teal-100 rounded-full mr-6 text-teal-700">
+                            <i class="fas fa-wifi-slash fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="m-0 text-xl font-bold">Sem internet? Sem problemas!</h4>
+                            <p class="text-lg m-0">O aplicativo continua funcionando mesmo se o Wi-Fi cair. Ele atualiza tudo assim que a internet voltar.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-4 bg-white shadow rounded-lg transform transition hover:scale-105">
+                        <div class="p-4 bg-orange-100 rounded-full mr-6 text-orange-600">
+                            <i class="fas fa-bolt fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="m-0 text-xl font-bold">Atualização Instantânea</h4>
+                            <p class="text-lg m-0">Se o professor postar um aviso agora, o celular dos pais apita no mesmo segundo.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-4 bg-white shadow rounded-lg transform transition hover:scale-105">
+                        <div class="p-4 bg-blue-100 rounded-full mr-6 text-blue-600">
+                            <i class="fas fa-mobile-alt fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="m-0 text-xl font-bold">Design Moderno</h4>
+                            <p class="text-lg m-0">Telas limpas, letras grandes e botões fáceis de encontrar.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Slide 9: Encerramento -->
+            <section data-background-color="#0F766E">
+                <h1 style="color: white; font-size: 3.5em;">Obrigado!</h1>
+                <h3 style="color: #F97316;">Dúvidas?</h3>
+                
+                <div class="mt-12 text-white">
+                    <p><i class="fab fa-github"></i> github.com/sourcenaiomiocc-creator/takstud</p>
+                    <p><i class="fas fa-envelope"></i> sourcenaiomiocc@gmail.com</p>
+                </div>
+                
+                <div class="mt-12">
+                    <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300">
+                        Ver Demonstração
+                    </button>
+                </div>
+            </section>
+
         </div>
-    </nav>
-
-    <main class="slider-container">
-
-        <!-- Slide 1: Capa Steve Jobs -->
-        <section class="slide active">
-            <div class="content centered">
-                <div class="badge">Inovação na Educação</div>
-                <h1 class="big-title">TakStud</h1>
-                <p class="quote-text">
-                    "A tecnologia não é nada. O importante é que você tenha fé nas pessoas... Se você der a elas ferramentas, elas farão coisas maravilhosas."
-                </p>
-                <p class="quote-author">— Steve Jobs</p>
-                <br>
-                <button class="cta-btn" onclick="nextSlide()">Conhecer a Ferramenta ➔</button>
-            </div>
-        </section>
-
-        <!-- Slide 2: O Problema -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>O Problema da Comunicação 📉</h2>
-                <p>Escolas ainda sofrem com métodos analógicos na era digital.</p>
-                <div class="grid-2">
-                    <div class="glass-card warning">
-                        <h3>🚫 Bilhetes de Papel</h3>
-                        <p>Ineficientes, caros e se perdem facilmente.</p>
-                    </div>
-                    <div class="glass-card warning">
-                        <h3>🚫 Grupos de Mensagem</h3>
-                        <p>Informações descentralizadas e sem privacidade.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 3: A Solução TakStud -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>A Solução TakStud ✨</h2>
-                <p>Um ecossistema digital completo em um aplicativo nativo Android.</p>
-                <div class="features-row">
-                    <div class="mini-feature">📱 App Nativo</div>
-                    <div class="mini-feature">⚡ Alta Performance</div>
-                    <div class="mini-feature">☁️ 100% Cloud</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 4: Tecnologia Firebase -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Backend Google Firebase 🔥</h2>
-                <p>Infraestrutura de classe mundial para garantir estabilidade.</p>
-                <div class="tech-grid">
-                    <div class="glass-card">
-                        <div class="icon">⚡</div>
-                        <h3>Realtime Database</h3>
-                        <p>Sincronização de dados em milissegundos.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="icon">☁️</div>
-                        <h3>Cloud Storage</h3>
-                        <p>Backup automático e segurança criptografada.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 5: Segurança e Acesso -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Protocolos de Segurança 🔒</h2>
-                <p>Controle de acesso rigoroso para proteção dos dados.</p>
-                <div class="login-types">
-                    <div class="login-card professor">
-                        <span class="role">Professor</span>
-                        <h3>Unique ID</h3>
-                        <p>Chave de acesso administrativa criptografada.</p>
-                    </div>
-                    <div class="divider">vs</div>
-                    <div class="login-card student">
-                        <span class="role">Aluno / Pais</span>
-                        <h3>R.A. Token</h3>
-                        <p>Login simplificado via Registro Acadêmico.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 6: Professor - Gestão de Turmas -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Dashboard do Professor 👩‍🏫</h2>
-                <p>Otimização do fluxo de trabalho docente.</p>
-                <ul class="check-list">
-                    <li>✅ <strong>Gestão de Perfil:</strong> Cadastro intuitivo de alunos.</li>
-                    <li>✅ <strong>Segregação de Dados:</strong> Organização inteligente por turmas.</li>
-                    <li>✅ <strong>Data Access:</strong> Histórico acadêmico sempre disponível.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Slide 7: Professor - Rotina Diária -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Ferramentas Pedagógicas 🛠️</h2>
-                <p>Recursos digitais para o dia a dia.</p>
-                <div class="grid-3">
-                    <div class="glass-card small">
-                        <h3>📝 Tarefas</h3>
-                        <p>Criação e distribuição de atividades.</p>
-                    </div>
-                    <div class="glass-card small">
-                        <h3>🙋‍♂️ Chamada</h3>
-                        <p>Registro de presença one-tap.</p>
-                    </div>
-                    <div class="glass-card small">
-                        <h3>📊 Notas</h3>
-                        <p>Lançamento ágil de avaliações.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 8: Professor - Avisos -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Comunicação Push 📢</h2>
-                <p>Mensageria oficial direta para os dispositivos dos pais.</p>
-                <div class="mock-notification">
-                    <div class="notif-header">Nova Notificação</div>
-                    <div class="notif-body">
-                        "Comunicado: O boletim do 3º Bimestre já está disponível no app."
-                    </div>
-                    <div class="notif-status">Entregue para 32 dispositivos</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 9: Pais - Visão Geral -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Interface do Responsável 👨‍👩‍👧‍👦</h2>
-                <p>Monitoramento passivo e não invasivo.</p>
-                <div class="stats-dashboard">
-                    <div class="stat-item">
-                        <span class="value">95%</span>
-                        <span class="label">Attendance</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="value">8.5</span>
-                        <span class="label">GPA Médio</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="value">2</span>
-                        <span class="label">Tasks</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 10: Aluno - Organização -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Student Planner 📅</h2>
-                <p>Grade horária digital sincronizada.</p>
-                <div class="mock-schedule">
-                    <div class="schedule-item active">
-                        <span class="time">07:30</span>
-                        <span class="subject">Matemática</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="time">08:20</span>
-                        <span class="subject">História</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="time">09:10</span>
-                        <span class="subject">Português</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 11: Resumo dos Benefícios -->
-        <section class="slide">
-            <div class="content centered">
-                <h2>Por que o TakStud? 🚀</h2>
-                <div class="grid-2">
-                    <ul class="benefit-list">
-                        <li>🕒 <strong>Time Saving:</strong> Automação de processos repetitivos.</li>
-                        <li>🌳 <strong>Paperless:</strong> Eliminação do uso de papel.</li>
-                    </ul>
-                    <ul class="benefit-list">
-                        <li>🔒 <strong>Security:</strong> Dados criptografados no Google Cloud.</li>
-                        <li>🤝 <strong>Engagement:</strong> Maior participação familiar.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 12: Encerramento -->
-        <section class="slide">
-            <div class="content centered">
-                <div class="final-logo">TakStud</div>
-                <h1>A tecnologia a serviço da educação.</h1>
-                <p>Leve essa inovação para sua escola.</p>
-                <br>
-                <h2 class="thank-you">MUITO OBRIGADO!</h2>
-                <p class="final-phrase">"A melhor maneira de prever o futuro é inventá-lo." — Alan Kay</p>
-                <br><br>
-                <button class="restart-btn" onclick="goToSlide(0)">↺ Reiniciar Apresentação</button>
-            </div>
-        </section>
-
-    </main>
-
-    <div class="controls">
-        <button class="nav-btn" id="prevBtn">❮</button>
-        <div class="indicators" id="indicators"></div>
-        <button class="nav-btn" id="nextBtn">❯</button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        // Inicialização do Reveal.js
+        Reveal.initialize({
+            hash: true, // Adiciona o número do slide na URL
+            controls: true, // Setas de navegação
+            progress: true, // Barra de progresso
+            center: true, // Centraliza verticalmente
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            backgroundTransition: 'fade',
+            
+            // Configurações de layout para garantir boa visualização
+            width: 960,
+            height: 700,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
 </body>
 </html>
