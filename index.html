@@ -33,11 +33,12 @@
 
         body {
             font-family: 'Inter', sans-serif !important;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
         }
 
         .reveal {
             font-family: 'Inter', sans-serif !important;
-            color: var(--takstud-dark);
+            color: #1f2937;
         }
 
         /* Títulos */
@@ -46,12 +47,23 @@
             font-weight: 700;
             text-transform: none;
             color: var(--takstud-teal);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .reveal h2 {
+            border-bottom: 3px solid var(--takstud-orange);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 30px;
         }
 
         /* Destaques em Laranja */
         .highlight {
-            color: var(--takstud-orange);
+            color: #c2410c;
             font-weight: bold;
+            background: linear-gradient(120deg, rgba(249, 115, 22, 0.3) 0%, rgba(249, 115, 22, 0.4) 100%);
+            padding: 3px 10px;
+            border-radius: 5px;
         }
 
         /* Listas */
@@ -59,48 +71,109 @@
             display: block;
             margin-left: 1em;
         }
-        
+
         .reveal ul li {
-            margin-bottom: 0.5em;
-            list-style-type: none; /* Remove padrão para usar ícones customizados se desejar */
+            margin-bottom: 0.8em;
+            list-style-type: none;
             position: relative;
             padding-left: 1.5em;
+            transition: transform 0.2s ease;
+        }
+
+        .reveal ul li:hover {
+            transform: translateX(5px);
         }
 
         .reveal ul li::before {
-            content: '•';
+            content: '▸';
             color: var(--takstud-orange);
             font-weight: bold;
             display: inline-block;
             width: 1em;
             margin-left: -1em;
+            font-size: 1.2em;
         }
 
         /* Cards e Boxes */
         .tech-card {
-            background: rgba(15, 118, 110, 0.05);
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(15, 118, 110, 0.18) 100%);
             border-left: 5px solid var(--takstud-teal);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
             margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.12);
         }
 
         /* Ajustes de código/monoespaçado */
         .code-snippet {
             font-family: 'Courier New', monospace;
-            background: #f1f5f9;
-            color: #d946ef; /* Um roxo para destacar código */
-            padding: 2px 6px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #d946ef;
+            padding: 4px 8px;
+            border-radius: 6px;
             font-size: 0.9em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         /* Background Gradient sutil para os slides */
         .reveal .slides section {
-            padding: 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
         }
-        
-        /* Rodapé fixo (opcional, via CSS global do reveal) */
+
+        /* Ícones com destaque */
+        .reveal i.fa, .reveal i.fas, .reveal i.fab, .reveal i.far {
+            transition: all 0.3s ease;
+        }
+
+        .reveal li:hover i {
+            transform: scale(1.2);
+            color: var(--takstud-teal);
+        }
+
+        /* Botões aprimorados */
+        button {
+            transition: all 0.3s ease !important;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05) !important;
+        }
+
+        /* Cards com sombra suave */
+        .shadow-lg {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+        }
+
+        .shadow-xl {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+        }
+
+        /* Animações de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal .slides section > * {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Rodapé fixo */
         .footer-logo {
             position: absolute;
             bottom: 20px;
@@ -118,15 +191,15 @@
         <div class="slides">
 
             <!-- Slide 1: Título -->
-            <section data-background-gradient="linear-gradient(to bottom right, #f0fdfa, #ffffff)">
+            <section data-background-gradient="linear-gradient(135deg, #0F766E 0%, #14b8a6 100%)">
                 <div class="flex flex-col items-center justify-center h-full">
-                    <div class="mb-6">
+                    <div class="mb-8 bg-white rounded-full p-8 shadow-2xl">
                         <i class="fas fa-graduation-cap fa-4x" style="color: var(--takstud-teal);"></i>
                     </div>
-                    <h1 style="font-size: 4em; margin-bottom: 10px;">TakStud</h1>
-                    <h3 style="color: var(--takstud-orange); font-weight: 400;">A Escola na Palma da Mão.</h3>
-                    <div class="mt-12 pt-8 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">Apresentação do Projeto de Aplicativo Android</p>
+                    <h1 style="font-size: 5em; margin-bottom: 10px; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">TakStud</h1>
+                    <h3 style="color: var(--takstud-orange); font-weight: 600; background: white; padding: 10px 30px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">A Escola na Palma da Mão</h3>
+                    <div class="mt-16 pt-8 border-t border-white border-opacity-30">
+                        <p class="text-lg text-white font-light">Apresentação do Projeto de Aplicativo Android</p>
                     </div>
                 </div>
             </section>
@@ -134,41 +207,41 @@
             <!-- Slide 2: Visão Geral -->
             <section>
                 <h2><i class="fas fa-info-circle mr-3 text-3xl"></i>O Que é o TakStud?</h2>
-                <div class="text-left mt-8 text-2xl">
+                <div class="text-left mt-8 text-2xl text-gray-800">
                     <ul>
-                        <li>Um aplicativo moderno para conectar <strong>professores e pais</strong> de forma simples e direta.</li>
+                        <li>Um aplicativo moderno para conectar <strong class="text-gray-900">professores e pais</strong> de forma simples e direta.</li>
                         <li>Acaba com o papelzinho na mochila: centraliza <span class="highlight">horários</span>, <span class="highlight">avisos</span>, <span class="highlight">trabalhos</span> e <span class="highlight">provas</span> no celular.</li>
-                        <li>Feito para ser <strong>fácil de usar</strong> por qualquer pessoa, mesmo quem não tem muita intimidade com tecnologia.</li>
+                        <li>Feito para ser <strong class="text-gray-900">fácil de usar</strong> por qualquer pessoa, mesmo quem não tem muita intimidade com tecnologia.</li>
                     </ul>
                 </div>
             </section>
 
             <!-- Slide 3: Arquitetura e Tecnologias (Simplificado) -->
-            <section>
+            <section data-background-gradient="linear-gradient(to bottom, #ffffff, #f0fdfa)">
                 <h2>Como foi Construído?</h2>
-                <p class="text-gray-500 mb-6 text-lg">Usamos tecnologias confiáveis para garantir segurança e rapidez.</p>
-                <div class="grid grid-cols-2 gap-8 mt-4 text-left">
+                <p class="text-gray-700 mb-8 text-xl font-medium">Usamos tecnologias confiáveis para garantir segurança e rapidez</p>
+                <div class="grid grid-cols-2 gap-8 mt-6 text-left">
                     <!-- Coluna 1 -->
-                    <div class="tech-card bg-teal-50">
-                        <h4 class="flex items-center mb-4 text-xl font-bold border-b border-teal-200 pb-2">
-                            <i class="fab fa-google mr-2"></i> Padrão Google
+                    <div class="tech-card" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); border-left-color: #0f766e;">
+                        <h4 class="flex items-center mb-5 text-2xl font-bold border-b-2 border-white pb-3" style="color: white;">
+                            <i class="fab fa-google mr-3 text-3xl"></i> Padrão Google
                         </h4>
-                        <ul class="text-xl space-y-2">
-                            <li><strong>Kotlin:</strong> A linguagem oficial e moderna do Android.</li>
-                            <li><strong>Visual Moderno:</strong> Telas bonitas e fáceis de navegar.</li>
-                            <li><strong>Segurança:</strong> Seus dados protegidos na nuvem do Google.</li>
+                        <ul class="text-xl space-y-3 text-white">
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>Kotlin:</strong> A linguagem oficial e moderna do Android.</li>
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>Visual Moderno:</strong> Telas bonitas e fáceis de navegar.</li>
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>Segurança:</strong> Seus dados protegidos na nuvem do Google.</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Coluna 2 -->
-                    <div class="tech-card bg-orange-50" style="border-left-color: var(--takstud-orange);">
-                        <h4 class="flex items-center mb-4 text-xl font-bold border-b border-orange-200 pb-2" style="color: var(--takstud-orange);">
-                            <i class="fas fa-cogs mr-2"></i> Qualidade Técnica
+                    <div class="tech-card" style="border-left-color: #ea580c; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                        <h4 class="flex items-center mb-5 text-2xl font-bold border-b-2 border-white pb-3" style="color: white;">
+                            <i class="fas fa-cogs mr-3 text-3xl"></i> Qualidade Técnica
                         </h4>
-                        <ul class="text-xl space-y-2">
-                            <li><strong>Organização:</strong> O código é "arrumado" para facilitar atualizações futuras.</li>
-                            <li><strong>Sem Travamentos:</strong> Feito para rodar suave, mesmo em celulares mais simples.</li>
-                            <li><strong>Backup Automático:</strong> Salvamos tudo para você não perder nada.</li>
+                        <ul class="text-xl space-y-3 text-white">
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>Organização:</strong> O código é "arrumado" para facilitar atualizações futuras.</li>
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>Sem Travamentos:</strong> Feito para rodar suave, mesmo em celulares mais simples.</li>
+                            <li><i class="fas fa-check-circle mr-2"></i><strong>Backup Automático:</strong> Salvamos tudo para você não perder nada.</li>
                         </ul>
                     </div>
                 </div>
@@ -177,27 +250,56 @@
             <!-- Slide 4: Ambiente e Ferramentas (Simplificado) -->
             <section>
                 <h2>Ferramentas Utilizadas</h2>
-                <div class="text-left mt-6 text-2xl">
-                    <ul>
-                        <li><i class="fas fa-laptop-code w-8 text-center mr-2 text-gray-400"></i> <strong>Criação:</strong> Utilizamos o software oficial de desenvolvimento Android (Android Studio).</li>
-                        <li><i class="fas fa-brain w-8 text-center mr-2 text-gray-400"></i> <strong>Inteligência Artificial:</strong> Usamos IA (Gemini) para ajudar a escrever o código mais rápido e com menos erros.</li>
-                        <li><i class="fas fa-code-branch w-8 text-center mr-2 text-gray-400"></i> <strong>Histórico:</strong> Mantemos um histórico de cada alteração feita no projeto (Git).</li>
-                    </ul>
+                <p class="text-gray-700 mb-4 text-lg font-medium">As melhores ferramentas para criar um app de qualidade</p>
+
+                <div class="grid grid-cols-1 gap-4 mt-4 text-left">
+                    <!-- Android Studio -->
+                    <div class="flex items-center p-4 bg-gradient-to-r from-green-600 to-green-500 rounded-xl shadow-xl border-4 border-green-700 transform transition hover:scale-105">
+                        <div class="p-3 bg-white rounded-full mr-4 text-green-700">
+                            <i class="fas fa-laptop-code fa-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="m-0 text-xl font-bold text-white">Android Studio</h4>
+                            <p class="text-base m-0 text-green-50">O software oficial de desenvolvimento Android - usado por milhões de desenvolvedores no mundo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Claude AI -->
+                    <div class="flex items-center p-4 bg-gradient-to-r from-orange-600 to-orange-500 rounded-xl shadow-xl border-4 border-orange-700 transform transition hover:scale-105">
+                        <div class="p-3 bg-white rounded-full mr-4 text-orange-700">
+                            <i class="fas fa-brain fa-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="m-0 text-xl font-bold text-white">Claude AI</h4>
+                            <p class="text-base m-0 text-orange-50">Inteligência Artificial avançada para escrever código mais rápido, com menos erros e melhor qualidade.</p>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="flex items-center p-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl shadow-xl border-4 border-blue-700 transform transition hover:scale-105">
+                        <div class="p-3 bg-white rounded-full mr-4 text-blue-700">
+                            <i class="fas fa-code-branch fa-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="m-0 text-xl font-bold text-white">Git & GitHub</h4>
+                            <p class="text-base m-0 text-blue-50">Controle de versão profissional - cada alteração do código é registrada e pode ser recuperada.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Slide 5: Portal do Professor -->
             <section>
                 <h2>Para o Professor</h2>
-                <h4 class="text-gray-500 font-light mb-8">Menos burocracia, mais ensino</h4>
+                <h4 class="text-gray-600 font-normal mb-8 text-xl">Menos burocracia, mais ensino</h4>
                 
                 <div class="flex items-start justify-center">
-                    <div class="w-full text-left bg-white shadow-lg p-6 rounded-lg border-t-4 border-teal-600">
-                        <p class="mb-4">Um painel de controle simples para gerenciar a turma em segundos.</p>
-                        <ul class="text-2xl space-y-3">
-                            <li><i class="fas fa-tasks mr-2 text-teal-600"></i> <strong>Tarefas e Provas:</strong> Crie avisos de provas e trabalhos com poucos cliques.</li>
-                            <li><i class="fas fa-bullhorn mr-2 text-teal-600"></i> <strong>Avisos Gerais:</strong> Envie recados importantes para todos os pais de uma vez.</li>
-                            <li><i class="far fa-calendar-alt mr-2 text-teal-600"></i> <strong>Agenda:</strong> Organize o horário das aulas sem confusão.</li>
+                    <div class="w-full text-left bg-gradient-to-br from-teal-600 to-teal-500 shadow-2xl p-8 rounded-lg border-4 border-teal-700">
+                        <p class="mb-6 text-xl text-white font-semibold">Um painel de controle simples para gerenciar a turma em segundos.</p>
+                        <ul class="text-2xl space-y-4">
+                            <li class="text-white"><i class="fas fa-tasks mr-3 text-teal-100 fa-lg"></i> <strong>Tarefas e Provas:</strong> Crie avisos de provas e trabalhos com poucos cliques.</li>
+                            <li class="text-white"><i class="fas fa-bullhorn mr-3 text-teal-100 fa-lg"></i> <strong>Avisos Gerais:</strong> Envie recados importantes para todos os pais de uma vez.</li>
+                            <li class="text-white"><i class="far fa-calendar-alt mr-3 text-teal-100 fa-lg"></i> <strong>Agenda:</strong> Organize o horário das aulas sem confusão.</li>
                         </ul>
                     </div>
                 </div>
@@ -206,28 +308,28 @@
             <!-- Slide 6: Portal dos Pais -->
             <section>
                 <h2>Para os Pais</h2>
-                <h4 class="text-gray-500 font-light mb-8">Acompanhe tudo de perto</h4>
+                <h4 class="text-gray-600 font-normal mb-8 text-xl">Acompanhe tudo de perto</h4>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
-                    <div class="col-span-3 mb-4 p-4 bg-orange-100 rounded border border-orange-200">
-                        <i class="fas fa-filter text-orange-500 mr-2"></i>
-                        <strong>Filtro Inteligente</strong><br>
-                        <span class="text-sm">Você vê apenas o que importa para a turma do seu filho. Sem bagunça.</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+                    <div class="col-span-3 mb-4 p-6 bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg border-4 border-orange-700 shadow-xl">
+                        <i class="fas fa-filter text-white mr-2 text-2xl"></i>
+                        <strong class="text-white text-xl">Filtro Inteligente</strong><br>
+                        <span class="text-lg text-orange-50">Você vê apenas o que importa para a turma do seu filho. Sem bagunça.</span>
                     </div>
 
-                    <div class="p-4 bg-gray-50 rounded shadow-sm">
-                        <div class="text-teal-700 font-bold mb-2"><i class="fas fa-book-open"></i> Lição de Casa</div>
-                        <p class="text-sm">Saiba exatamente quando são as provas e entregas de trabalhos.</p>
+                    <div class="p-6 bg-gradient-to-br from-teal-600 to-teal-500 rounded-lg shadow-xl border-4 border-teal-700">
+                        <div class="text-white font-bold mb-3 text-xl"><i class="fas fa-book-open mr-2"></i> Lição de Casa</div>
+                        <p class="text-base text-teal-50">Saiba exatamente quando são as provas e entregas de trabalhos.</p>
                     </div>
 
-                    <div class="p-4 bg-gray-50 rounded shadow-sm">
-                        <div class="text-teal-700 font-bold mb-2"><i class="fas fa-bell"></i> Recados</div>
-                        <p class="text-sm">Receba convites para reuniões e avisos da diretoria.</p>
+                    <div class="p-6 bg-gradient-to-br from-teal-600 to-teal-500 rounded-lg shadow-xl border-4 border-teal-700">
+                        <div class="text-white font-bold mb-3 text-xl"><i class="fas fa-bell mr-2"></i> Recados</div>
+                        <p class="text-base text-teal-50">Receba convites para reuniões e avisos da diretoria.</p>
                     </div>
 
-                    <div class="p-4 bg-gray-50 rounded shadow-sm">
-                        <div class="text-teal-700 font-bold mb-2"><i class="fas fa-clock"></i> Horários</div>
-                        <p class="text-sm">Confira a grade de aulas para ajudar a organizar a mochila.</p>
+                    <div class="p-6 bg-gradient-to-br from-teal-600 to-teal-500 rounded-lg shadow-xl border-4 border-teal-700">
+                        <div class="text-white font-bold mb-3 text-xl"><i class="fas fa-clock mr-2"></i> Horários</div>
+                        <p class="text-base text-teal-50">Confira a grade de aulas para ajudar a organizar a mochila.</p>
                     </div>
                 </div>
             </section>
@@ -235,16 +337,16 @@
             <!-- Slide 7: Banco de Dados (Visual) -->
             <section>
                 <h2>Onde ficam as informações?</h2>
-                <p class="text-xl mb-8">Usamos a tecnologia de nuvem do Google para garantir que nada se perca.</p>
+                <p class="text-xl mb-8 text-gray-800 font-medium">Usamos a tecnologia de nuvem do Google para garantir que nada se perca.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                     <!-- Collection Tasks -->
-                    <div class="bg-white p-4 rounded-lg shadow-xl border border-gray-200">
-                        <div class="flex items-center border-b border-gray-100 pb-2 mb-2 text-teal-700 font-bold">
+                    <div class="bg-gradient-to-br from-teal-600 to-teal-500 p-6 rounded-lg shadow-xl border-4 border-teal-700">
+                        <div class="flex items-center border-b-2 border-white pb-3 mb-3 text-white font-bold text-xl">
                             <i class="fas fa-clipboard-list mr-2"></i> Tarefas
                         </div>
-                        <p class="text-sm text-gray-600">Aqui guardamos:</p>
-                        <ul class="text-sm text-gray-500 mt-2">
+                        <p class="text-base text-white font-semibold mb-2">Aqui guardamos:</p>
+                        <ul class="text-base text-teal-50 mt-2 space-y-1">
                             <li>• Título do trabalho</li>
                             <li>• Descrição do que fazer</li>
                             <li>• Data de entrega</li>
@@ -252,12 +354,12 @@
                     </div>
 
                     <!-- Collection Notices -->
-                    <div class="bg-white p-4 rounded-lg shadow-xl border border-gray-200">
-                        <div class="flex items-center border-b border-gray-100 pb-2 mb-2 text-teal-700 font-bold">
+                    <div class="bg-gradient-to-br from-orange-600 to-orange-500 p-6 rounded-lg shadow-xl border-4 border-orange-700">
+                        <div class="flex items-center border-b-2 border-white pb-3 mb-3 text-white font-bold text-xl">
                             <i class="fas fa-envelope-open-text mr-2"></i> Avisos
                         </div>
-                        <p class="text-sm text-gray-600">Aqui guardamos:</p>
-                        <ul class="text-sm text-gray-500 mt-2">
+                        <p class="text-base text-white font-semibold mb-2">Aqui guardamos:</p>
+                        <ul class="text-base text-orange-50 mt-2 space-y-1">
                             <li>• Título do aviso</li>
                             <li>• Mensagem completa</li>
                             <li>• Nível de urgência</li>
@@ -265,12 +367,12 @@
                     </div>
 
                     <!-- Collection Schedules -->
-                    <div class="bg-white p-4 rounded-lg shadow-xl border border-gray-200">
-                        <div class="flex items-center border-b border-gray-100 pb-2 mb-2 text-teal-700 font-bold">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-500 p-6 rounded-lg shadow-xl border-4 border-blue-700">
+                        <div class="flex items-center border-b-2 border-white pb-3 mb-3 text-white font-bold text-xl">
                             <i class="far fa-clock mr-2"></i> Aulas
                         </div>
-                        <p class="text-sm text-gray-600">Aqui guardamos:</p>
-                        <ul class="text-sm text-gray-500 mt-2">
+                        <p class="text-base text-white font-semibold mb-2">Aqui guardamos:</p>
+                        <ul class="text-base text-blue-50 mt-2 space-y-1">
                             <li>• Dia da semana</li>
                             <li>• Matéria (ex: Matemática)</li>
                             <li>• Horário de início/fim</li>
@@ -282,35 +384,35 @@
             <!-- Slide 8: Funcionalidades Chave (Simplificado) -->
             <section>
                 <h2>Por que o TakStud é diferente?</h2>
-                <div class="mt-8 space-y-6 text-left">
-                    
-                    <div class="flex items-center p-4 bg-white shadow rounded-lg transform transition hover:scale-105">
-                        <div class="p-4 bg-teal-100 rounded-full mr-6 text-teal-700">
-                            <i class="fas fa-wifi-slash fa-2x"></i>
+                <div class="mt-4 space-y-4 text-left">
+
+                    <div class="flex items-center p-4 bg-gradient-to-r from-teal-600 to-teal-500 shadow-xl rounded-lg transform transition hover:scale-105 border-4 border-teal-700">
+                        <div class="p-3 bg-white rounded-full mr-4 text-teal-700">
+                            <i class="fas fa-wifi-slash fa-lg"></i>
                         </div>
                         <div>
-                            <h4 class="m-0 text-xl font-bold">Sem internet? Sem problemas!</h4>
-                            <p class="text-lg m-0">O aplicativo continua funcionando mesmo se o Wi-Fi cair. Ele atualiza tudo assim que a internet voltar.</p>
+                            <h4 class="m-0 text-xl font-bold text-white">Sem internet? Sem problemas!</h4>
+                            <p class="text-base m-0 text-teal-50">O aplicativo continua funcionando mesmo se o Wi-Fi cair. Ele atualiza tudo assim que a internet voltar.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-center p-4 bg-white shadow rounded-lg transform transition hover:scale-105">
-                        <div class="p-4 bg-orange-100 rounded-full mr-6 text-orange-600">
-                            <i class="fas fa-bolt fa-2x"></i>
+                    <div class="flex items-center p-4 bg-gradient-to-r from-orange-600 to-orange-500 shadow-xl rounded-lg transform transition hover:scale-105 border-4 border-orange-700">
+                        <div class="p-3 bg-white rounded-full mr-4 text-orange-700">
+                            <i class="fas fa-bolt fa-lg"></i>
                         </div>
                         <div>
-                            <h4 class="m-0 text-xl font-bold">Atualização Instantânea</h4>
-                            <p class="text-lg m-0">Se o professor postar um aviso agora, o celular dos pais apita no mesmo segundo.</p>
+                            <h4 class="m-0 text-xl font-bold text-white">Atualização Instantânea</h4>
+                            <p class="text-base m-0 text-orange-50">Se o professor postar um aviso agora, o celular dos pais apita no mesmo segundo.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-center p-4 bg-white shadow rounded-lg transform transition hover:scale-105">
-                        <div class="p-4 bg-blue-100 rounded-full mr-6 text-blue-600">
-                            <i class="fas fa-mobile-alt fa-2x"></i>
+                    <div class="flex items-center p-4 bg-gradient-to-r from-blue-600 to-blue-500 shadow-xl rounded-lg transform transition hover:scale-105 border-4 border-blue-700">
+                        <div class="p-3 bg-white rounded-full mr-4 text-blue-700">
+                            <i class="fas fa-mobile-alt fa-lg"></i>
                         </div>
                         <div>
-                            <h4 class="m-0 text-xl font-bold">Design Moderno</h4>
-                            <p class="text-lg m-0">Telas limpas, letras grandes e botões fáceis de encontrar.</p>
+                            <h4 class="m-0 text-xl font-bold text-white">Design Moderno</h4>
+                            <p class="text-base m-0 text-blue-50">Telas limpas, letras grandes e botões fáceis de encontrar.</p>
                         </div>
                     </div>
 
@@ -318,19 +420,30 @@
             </section>
 
             <!-- Slide 9: Encerramento -->
-            <section data-background-color="#0F766E">
-                <h1 style="color: white; font-size: 3.5em;">Obrigado!</h1>
-                <h3 style="color: #F97316;">Dúvidas?</h3>
-                
-                <div class="mt-12 text-white">
-                    <p><i class="fab fa-github"></i> github.com/sourcenaiomiocc-creator/takstud</p>
-                    <p><i class="fas fa-envelope"></i> sourcenaiomiocc@gmail.com</p>
-                </div>
-                
-                <div class="mt-12">
-                    <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300">
-                        Ver Demonstração
-                    </button>
+            <section data-background-gradient="linear-gradient(135deg, #0F766E 0%, #14b8a6 100%)">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <div class="mb-4">
+                        <i class="fas fa-heart fa-3x" style="color: #F97316;"></i>
+                    </div>
+                    <h1 style="color: white; font-size: 4em; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Obrigado!</h1>
+                    <h3 style="color: white; font-weight: 400; margin-top: 10px; font-size: 1.8em;">Alguma dúvida?</h3>
+
+                    <div class="mt-8 text-white space-y-3 text-lg">
+                        <div class="flex items-center justify-center bg-white bg-opacity-90 p-3 rounded-lg shadow-xl">
+                            <i class="fab fa-github mr-3 text-xl text-teal-700"></i>
+                            <span class="text-gray-800 font-semibold">github.com/sourcenaiomiocc-creator/takstud</span>
+                        </div>
+                        <div class="flex items-center justify-center bg-white bg-opacity-90 p-3 rounded-lg shadow-xl">
+                            <i class="fas fa-envelope mr-3 text-xl text-teal-700"></i>
+                            <span class="text-gray-800 font-semibold">sourcenaiomiocc@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-2xl transition duration-300 text-lg transform hover:scale-110">
+                            <i class="fas fa-play mr-2"></i> Ver Demonstração
+                        </button>
+                    </div>
                 </div>
             </section>
 
