@@ -317,34 +317,62 @@
             font-size: 0.95rem;
         }
 
-        /* ========== SCREENSHOTS ========== */
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .screenshot-item {
+        /* ========== DOWNLOAD SECTION ========== */
+        .download-section {
             text-align: center;
         }
 
-        .screenshot-placeholder {
-            width: 100%;
-            aspect-ratio: 9/16;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        .download-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(79, 70, 229, 0.1));
+            padding: 3rem 2rem;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary);
+            margin-top: 2rem;
         }
 
-        .screenshot-item h4 {
+        .android-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .download-box p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-download:active {
+            transform: translateY(-1px);
+        }
+
+        .download-size {
             margin-top: 1rem;
-            color: var(--text);
+            font-size: 0.9rem;
+            color: var(--text-light);
         }
 
         /* ========== CTA SECTION ========== */
@@ -445,6 +473,10 @@
             .btn {
                 width: 100%;
             }
+
+            .download-box {
+                padding: 2rem 1rem;
+            }
         }
 
         /* ========== SCROLL ANIMATIONS ========== */
@@ -489,7 +521,7 @@
         <h1>🚀 Bem-vindo ao TakStud</h1>
         <p>A plataforma educacional que conecta professores, alunos e pais em um único lugar</p>
         <div class="cta-buttons">
-            <a href="#download" class="btn btn-primary">Baixar Agora</a>
+            <a href="#download" class="btn btn-primary">📥 Baixar Agora</a>
             <a href="#features" class="btn btn-secondary">Saber Mais</a>
         </div>
     </section>
@@ -572,7 +604,7 @@
                     <div class="benefit-icon">📱</div>
                     <div>
                         <h4>Acesso em Qualquer Lugar</h4>
-                        <p>Use no seu smartphone, tablet ou computador, sincronizado sempre</p>
+                        <p>Use no seu smartphone Android, sincronizado sempre</p>
                     </div>
                 </div>
                 <div class="benefit-item fade-in" style="animation-delay: 0.2s;">
@@ -609,26 +641,17 @@
 
     <!-- ========== DOWNLOAD ========== -->
     <section id="download" class="alt-bg">
-        <div class="container">
-            <h2>📲 Baixe o TakStud Agora</h2>
-            <div class="screenshot-grid">
-                <div class="screenshot-item fade-in">
-                    <div class="screenshot-placeholder">📱</div>
-                    <h4>iOS</h4>
-                    <p>Disponível na App Store</p>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Baixar</a>
-                </div>
-                <div class="screenshot-item fade-in" style="animation-delay: 0.2s;">
-                    <div class="screenshot-placeholder">🤖</div>
-                    <h4>Android</h4>
-                    <p>Disponível no Google Play</p>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Baixar</a>
-                </div>
-                <div class="screenshot-item fade-in" style="animation-delay: 0.4s;">
-                    <div class="screenshot-placeholder">💻</div>
-                    <h4>Web</h4>
-                    <p>Acesse de qualquer navegador</p>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Acessar</a>
+        <div class="container download-section">
+            <h2>📲 Baixe o TakStud para Android</h2>
+            <div class="download-box fade-in">
+                <div class="android-icon">🤖</div>
+                <h3>TakStud Android</h3>
+                <p>Acesse todas as funcionalidades direto no seu smartphone</p>
+                <a href="https://drive.google.com/uc?export=download&id=1Ot6lLN5TpOaDJOd0RinyOw_2Vxp3OcU8" class="btn-download" download>
+                    📥 Baixar APK (25 MB)
+                </a>
+                <div class="download-size">
+                    ⚡ Compatível com Android 8.0+
                 </div>
             </div>
         </div>
@@ -665,7 +688,6 @@
                     <ul>
                         <li><a href="mailto:contato@takstud.com">contato@takstud.com</a></li>
                         <li><a href="tel:+55">Suporte Técnico</a></li>
-                        <li><a href="#">Redes Sociais</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -673,7 +695,6 @@
                     <ul>
                         <li><a href="#">Privacidade</a></li>
                         <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Cookies</a></li>
                     </ul>
                 </div>
             </div>
@@ -699,7 +720,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .role-card, .benefit-item, .screenshot-item').forEach(el => {
+        document.querySelectorAll('.feature-card, .role-card, .benefit-item, .download-box').forEach(el => {
             observer.observe(el);
         });
 
