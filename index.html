@@ -647,9 +647,9 @@
                 <div class="android-icon">🤖</div>
                 <h3>TakStud Android</h3>
                 <p>Acesse todas as funcionalidades direto no seu smartphone</p>
-                <a href="https://drive.google.com/uc?export=download&id=1Ot6lLN5TpOaDJOd0RinyOw_2Vxp3OcU8" class="btn-download" download>
-                    📥 Baixar APK (25 MB)
-                </a>
+                <button class="btn-download" onclick="downloadAPK()">
+                    📥 Baixar APK
+                </button>
                 <div class="download-size">
                     ⚡ Compatível com Android 8.0+
                 </div>
@@ -705,6 +705,21 @@
     </footer>
 
     <script>
+        // Função para baixar o APK do Google Drive
+        function downloadAPK() {
+            // Link direto do Google Drive que força o download
+            const driveFileId = '1Ot6lLN5TpOaDJOd0RinyOw_2Vxp3OcU8';
+            const downloadUrl = `https://drive.google.com/uc?export=download&id=${driveFileId}`;
+
+            // Criar um elemento âncora temporário e simular clique
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = 'takstud.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
         // Animações ao scroll
         const observerOptions = {
             threshold: 0.1,
