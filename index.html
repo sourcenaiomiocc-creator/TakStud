@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TakStud - O Futuro da Comunicação Escolar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>TakStud - Plataforma Educacional para Professores e Pais</title>
     <style>
         * {
             margin: 0;
@@ -15,160 +12,159 @@
         }
 
         :root {
-            --primary-blue: #0066FF;
-            --dark-bg: #0a0a0a;
-            --light-text: #ffffff;
-            --gray-text: #888888;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --accent: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            overflow: hidden;
-            background: var(--dark-bg);
-            color: var(--light-text);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--bg-white);
         }
 
-        /* Background com grid futurista */
-        .background {
+        /* ========== HEADER ========== */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 2rem;
             position: fixed;
+            width: 100%;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background:
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes gridMove {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(50px); }
-        }
-
-        .gradient-orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.3;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: var(--primary-blue);
-            top: -250px;
-            right: -250px;
-            animation: float 15s ease-in-out infinite;
-        }
-
-        .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: #8B5CF6;
-            bottom: -200px;
-            left: -200px;
-            animation: float 20s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(50px, 50px) scale(1.1); }
-        }
-
-        .slider-container {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-            z-index: 2;
-        }
-
-        .slide {
-            width: 100%;
-            height: 100vh;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 0 5%;
-            text-align: center;
-            position: relative;
-        }
-
-        .slide.active {
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1);
+            justify-content: space-between;
+            align-items: center;
         }
 
-        @keyframes fadeInScale {
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 120px 2rem 60px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            animation: slideDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: slideUp 0.8s ease 0.2s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideUp 0.8s ease 0.4s backwards;
+        }
+
+        .btn {
+            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2.5rem);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .slide-content {
-            max-width: 1400px;
-            width: 100%;
-            margin-bottom: 120px; /* Espaço para os botões não sobreporem */
-        }
-
-        /* Tipografia estilo SpaceX/Google */
-        h1 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            line-height: 0.9;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: titleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes titleReveal {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-                filter: blur(10px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
-                filter: blur(0);
             }
         }
 
-        h2 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-        }
-
-        .subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 2rem);
-            font-weight: 400;
-            color: var(--gray-text);
-            margin-bottom: 60px;
-            line-height: 1.6;
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-        }
-
-        @keyframes fadeInUp {
+        @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -179,658 +175,543 @@
             }
         }
 
-        /* Hero emoji */
-        .hero-emoji {
-            font-size: clamp(5rem, 12vw, 10rem);
-            display: block;
-            margin-bottom: 40px;
-            filter: drop-shadow(0 20px 40px rgba(0,102,255,0.3));
-            animation: floatEmoji 3s ease-in-out infinite;
+        /* ========== CONTAINER ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        @keyframes floatEmoji {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+        /* ========== SECTION ========== */
+        section {
+            padding: 4rem 2rem;
         }
 
-        /* Cards estilo Google/SpaceX */
-        .feature-grid {
+        section h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        section.alt-bg {
+            background-color: var(--bg-light);
+        }
+
+        /* ========== FEATURES ========== */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .feature-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 50px 40px;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), #8B5CF6);
-            transform: scaleX(0);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary);
         }
 
         .feature-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ========== ROLES ========== */
+        .roles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .role-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(79, 70, 229, 0.1));
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .role-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+        }
+
+        .role-icon {
             font-size: 4rem;
-            margin-bottom: 25px;
-            display: block;
+            margin-bottom: 1rem;
         }
 
-        .feature-title {
+        .role-card h3 {
             font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
 
-        .feature-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--gray-text);
+        .role-features {
+            list-style: none;
         }
 
-        /* Problem/Solution Lists */
-        .info-list {
-            max-width: 900px;
-            margin: 60px auto 0;
-            text-align: left;
+        .role-features li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
         }
 
-        .info-item {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 30px 40px;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: slideInItem 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        .role-features li:before {
+            content: "✓ ";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
-        .info-item:nth-child(1) { animation-delay: 0.1s; }
-        .info-item:nth-child(2) { animation-delay: 0.2s; }
-        .info-item:nth-child(3) { animation-delay: 0.3s; }
-        .info-item:nth-child(4) { animation-delay: 0.4s; }
-        .info-item:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes slideInItem {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .role-features li:last-child {
+            border-bottom: none;
         }
 
-        .info-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--primary-blue);
-            transform: translateX(10px);
-        }
-
-        .info-item.problem {
-            border-left: 4px solid #FF4444;
-        }
-
-        .info-item.solution {
-            border-left: 4px solid #00FF88;
-        }
-
-        /* CTA Button estilo SpaceX */
-        .cta-button {
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 25px 60px;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 60px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.02em;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-
-        .cta-button:hover::before {
-            transform: translateX(100%);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.5);
-        }
-
-        .cta-button:active {
-            transform: scale(0.98);
-        }
-
-        /* Navigation estilo minimal */
-        .navigation {
-            position: fixed;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            z-index: 9999;
-        }
-
-        .nav-btn {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary-blue);
-            transform: translateY(-3px);
-        }
-
-        .nav-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Slide counter minimal */
-        .slide-counter {
-            position: fixed;
-            top: 50px;
-            right: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-text);
-            z-index: 9999;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .slide-counter span {
-            color: white;
-        }
-
-        /* Steps Grid */
-        .steps-grid {
+        /* ========== BENEFITS ========== */
+        .benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-            counter-reset: step;
-        }
-
-        .step-card {
-            position: relative;
-            text-align: center;
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-
-        .step-card:nth-child(1) { animation-delay: 0.2s; }
-        .step-card:nth-child(2) { animation-delay: 0.4s; }
-        .step-card:nth-child(3) { animation-delay: 0.6s; }
-
-        .step-number {
-            font-size: 6rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-blue), #8B5CF6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .step-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .step-description {
-            font-size: 1.1rem;
-            color: var(--gray-text);
-            line-height: 1.6;
-        }
-
-        /* Benefits Grid */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 60px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .benefit-item {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: left;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-
-        .benefit-item:nth-child(1) { animation-delay: 0.1s; }
-        .benefit-item:nth-child(2) { animation-delay: 0.2s; }
-        .benefit-item:nth-child(3) { animation-delay: 0.3s; }
-        .benefit-item:nth-child(4) { animation-delay: 0.4s; }
-        .benefit-item:nth-child(5) { animation-delay: 0.5s; }
-
-        .benefit-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-5px);
+            display: flex;
+            gap: 1rem;
         }
 
         .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: block;
+            font-size: 2rem;
+            min-width: 50px;
         }
 
-        .benefit-text {
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .benefit-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .slide-content {
-                margin-bottom: 160px;
-            }
-
-            .navigation {
-                bottom: 30px;
-                gap: 15px;
-            }
-
-            .nav-btn {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-            }
-
-            .slide-counter {
-                top: 30px;
-                right: 30px;
-                font-size: 0.9rem;
-            }
-
-            .feature-grid,
-            .steps-grid,
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .info-item {
-                padding: 20px 25px;
-                font-size: 1.1rem;
-            }
-
-            .cta-button {
-                padding: 20px 40px;
-                font-size: 1.1rem;
-            }
+        .benefit-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 140px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--gray-text);
-            font-size: 0.85rem;
-            font-weight: 500;
-            animation: fadeInUp 2s ease 1s both;
-            z-index: 100;
+        /* ========== SCREENSHOTS ========== */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .scroll-indicator::after {
-            content: '↓';
-            display: block;
+        .screenshot-item {
             text-align: center;
-            animation: bounce 2s ease infinite;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
+        .screenshot-placeholder {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
+
+        .screenshot-item h4 {
+            margin-top: 1rem;
+            color: var(--text);
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4b5563;
+            padding-top: 2rem;
+            color: #9ca3af;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .role-card {
+                padding: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ========== SCROLL ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <span>TakStud</span>
+            </div>
+            <nav>
+                <a href="#features">Funcionalidades</a>
+                <a href="#roles">Para Quem</a>
+                <a href="#benefits">Benefícios</a>
+                <a href="#download">Download</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="slide-counter">
-        <span id="currentSlide">01</span> / <span id="totalSlides">08</span>
-    </div>
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <h1>🚀 Bem-vindo ao TakStud</h1>
+        <p>A plataforma educacional que conecta professores, alunos e pais em um único lugar</p>
+        <div class="cta-buttons">
+            <a href="#download" class="btn btn-primary">Baixar Agora</a>
+            <a href="#features" class="btn btn-secondary">Saber Mais</a>
+        </div>
+    </section>
 
-    <div class="slider-container">
-        <!-- Slide 1: Hero -->
-        <div class="slide active">
-            <div class="slide-content">
-                <span class="hero-emoji">📱</span>
-                <h1>TakStud</h1>
-                <p class="subtitle">
-                    A ponte entre a escola e a família.<br>
-                    Tudo que acontece na escola, na palma da sua mão.
-                </p>
+    <!-- ========== FEATURES ========== -->
+    <section id="features">
+        <div class="container">
+            <h2>✨ Funcionalidades Principais</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in stagger-1">
+                    <div class="feature-icon">📢</div>
+                    <h3>Avisos</h3>
+                    <p>Professores podem enviar avisos importantes e os pais recebem notificações em tempo real</p>
+                </div>
+                <div class="feature-card fade-in stagger-2">
+                    <div class="feature-icon">✅</div>
+                    <h3>Tarefas</h3>
+                    <p>Organize e distribua tarefas com prazos, permitindo que pais acompanhem o progresso</p>
+                </div>
+                <div class="feature-card fade-in stagger-3">
+                    <div class="feature-icon">📝</div>
+                    <h3>Provas</h3>
+                    <p>Gerencie provas, datas e resultados de forma centralizada e transparente</p>
+                </div>
+                <div class="feature-card fade-in stagger-4">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Horários</h3>
+                    <p>Mantenha um calendário atualizado com aulas, eventos e datas importantes</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Slide 2: Problem -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">🤔</span>
-                <h2>Você já passou por isso?</h2>
-                <div class="info-list">
-                    <div class="info-item problem">
-                        📝 Pais sem saber das tarefas e provas dos filhos
+    <!-- ========== ROLES ========== -->
+    <section id="roles" class="alt-bg">
+        <div class="container">
+            <h2>👥 Para Professores e Pais</h2>
+            <div class="roles-container">
+                <div class="role-card fade-in">
+                    <div class="role-icon">👨‍🏫</div>
+                    <h3>Para Professores</h3>
+                    <ul class="role-features">
+                        <li>Criar e gerenciar avisos</li>
+                        <li>Atribuir tarefas com prazos</li>
+                        <li>Registrar provas e notas</li>
+                        <li>Manter calendário atualizado</li>
+                        <li>Comunicação direta com responsáveis</li>
+                        <li>Relatórios de desempenho</li>
+                    </ul>
+                </div>
+                <div class="role-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="role-icon">👨‍👩‍👧</div>
+                    <h3>Para Pais</h3>
+                    <ul class="role-features">
+                        <li>Receber avisos importantes</li>
+                        <li>Acompanhar tarefas dos filhos</li>
+                        <li>Visualizar datas de provas</li>
+                        <li>Consultar horários escolares</li>
+                        <li>Acompanhar desempenho</li>
+                        <li>Comunicação com professores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section id="benefits">
+        <div class="container">
+            <h2>💡 Por Que Usar TakStud?</h2>
+            <div class="benefits">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🔒</div>
+                    <div>
+                        <h4>Seguro e Confiável</h4>
+                        <p>Seus dados estão protegidos com as melhores práticas de segurança</p>
                     </div>
-                    <div class="info-item problem">
-                        📅 Perdeu o aviso importante da reunião?
+                </div>
+                <div class="benefit-item fade-in" style="animation-delay: 0.1s;">
+                    <div class="benefit-icon">📱</div>
+                    <div>
+                        <h4>Acesso em Qualquer Lugar</h4>
+                        <p>Use no seu smartphone, tablet ou computador, sincronizado sempre</p>
                     </div>
-                    <div class="info-item problem">
-                        ⏰ Não lembra os horários das aulas?
+                </div>
+                <div class="benefit-item fade-in" style="animation-delay: 0.2s;">
+                    <div class="benefit-icon">⚡</div>
+                    <div>
+                        <h4>Rápido e Intuitivo</h4>
+                        <p>Interface simples que qualquer um consegue usar sem dificuldade</p>
                     </div>
-                    <div class="info-item problem">
-                        😵 Professor gastando tempo copiando avisos no quadro?
+                </div>
+                <div class="benefit-item fade-in" style="animation-delay: 0.3s;">
+                    <div class="benefit-icon">🌐</div>
+                    <div>
+                        <h4>Conectividade Total</h4>
+                        <p>Mantém professores, alunos e pais sempre conectados e informados</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-in" style="animation-delay: 0.4s;">
+                    <div class="benefit-icon">📊</div>
+                    <div>
+                        <h4>Relatórios Detalhados</h4>
+                        <p>Acompanhe o desempenho com gráficos e análises claras</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-in" style="animation-delay: 0.5s;">
+                    <div class="benefit-icon">💬</div>
+                    <div>
+                        <h4>Suporte 24/7</h4>
+                        <p>Equipe de suporte sempre disponível para ajudar</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Slide 3: Solution -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">✨</span>
-                <h2>Chegou a solução</h2>
-                <p class="subtitle">Com o TakStud, pais e professores ficam conectados em tempo real</p>
-                <div class="info-list">
-                    <div class="info-item solution">
-                        ✓ Veja todas as tarefas e provas no celular
-                    </div>
-                    <div class="info-item solution">
-                        ✓ Receba avisos e comunicados sobre reuniões na hora
-                    </div>
-                    <div class="info-item solution">
-                        ✓ Consulte os horários das aulas sempre que precisar
-                    </div>
-                    <div class="info-item solution">
-                        ✓ Tudo em um só lugar, fácil e rápido
-                    </div>
+    <!-- ========== DOWNLOAD ========== -->
+    <section id="download" class="alt-bg">
+        <div class="container">
+            <h2>📲 Baixe o TakStud Agora</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-item fade-in">
+                    <div class="screenshot-placeholder">📱</div>
+                    <h4>iOS</h4>
+                    <p>Disponível na App Store</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Baixar</a>
+                </div>
+                <div class="screenshot-item fade-in" style="animation-delay: 0.2s;">
+                    <div class="screenshot-placeholder">🤖</div>
+                    <h4>Android</h4>
+                    <p>Disponível no Google Play</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Baixar</a>
+                </div>
+                <div class="screenshot-item fade-in" style="animation-delay: 0.4s;">
+                    <div class="screenshot-placeholder">💻</div>
+                    <h4>Web</h4>
+                    <p>Acesse de qualquer navegador</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Acessar</a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Slide 4: For Teachers -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">👨‍🏫</span>
-                <h2>Para Professores</h2>
-                <p class="subtitle">Menos tempo com papelada, mais tempo ensinando</p>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <span class="feature-icon">📋</span>
-                        <h3 class="feature-title">Tarefas e Provas</h3>
-                        <p class="feature-description">Crie atividades em segundos e todos os pais veem na hora</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">📢</span>
-                        <h3 class="feature-title">Avisos</h3>
-                        <p class="feature-description">Envie comunicados e informe sobre reuniões instantaneamente</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">📅</span>
-                        <h3 class="feature-title">Horários</h3>
-                        <p class="feature-description">Organize a grade de aulas das turmas</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 5: For Parents -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">👨‍👩‍👧‍👦</span>
-                <h2>Para Pais e Responsáveis</h2>
-                <p class="subtitle">Fique por dentro de tudo que acontece na escola</p>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <span class="feature-icon">📚</span>
-                        <h3 class="feature-title">Tarefas e Provas</h3>
-                        <p class="feature-description">Veja todas as atividades e datas de provas</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">🔔</span>
-                        <h3 class="feature-title">Avisos e Reuniões</h3>
-                        <p class="feature-description">Receba comunicados importantes na palma da mão</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">📅</span>
-                        <h3 class="feature-title">Horários</h3>
-                        <p class="feature-description">Consulte a grade de aulas quando quiser</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 6: How it Works -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">🚀</span>
-                <h2>Como funciona</h2>
-                <p class="subtitle">Simples, rápido e intuitivo</p>
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">01</div>
-                        <h3 class="step-title">Baixe o App</h3>
-                        <p class="step-description">Disponível para Android</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">02</div>
-                        <h3 class="step-title">Faça Login</h3>
-                        <p class="step-description">Professor ou responsável</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">03</div>
-                        <h3 class="step-title">Pronto!</h3>
-                        <p class="step-description">Tudo na palma da mão</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 7: Benefits -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">💎</span>
-                <h2>Por que TakStud?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <span class="benefit-icon">⚡</span>
-                        <p class="benefit-text"><strong>Rápido</strong> — Sem perder tempo com papel e bilhetes</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🎯</span>
-                        <p class="benefit-text"><strong>Prático</strong> — Tudo em um só lugar: avisos, tarefas e horários</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🔒</span>
-                        <p class="benefit-text"><strong>Seguro</strong> — Seus dados protegidos</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">💰</span>
-                        <p class="benefit-text"><strong>Econômico</strong> — Menos papel, menos impressão, menos custo</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🌍</span>
-                        <p class="benefit-text"><strong>Sustentável</strong> — Cuida do meio ambiente eliminando papel</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 8: CTA -->
-        <div class="slide">
-            <div class="slide-content">
-                <span class="hero-emoji">🎉</span>
-                <h2>Seja a primeira escola a usar</h2>
-                <p class="subtitle">
-                    Faça parte dessa revolução na comunicação escolar.<br>
-                    Transforme a forma como sua escola se comunica.
-                </p>
-                <button class="cta-button" onclick="alert('Entre em contato conosco!\n\nWhatsApp: (XX) XXXXX-XXXX\nEmail: contato@takstud.com')">
-                    Quero Conhecer Agora →
-                </button>
-                <p class="subtitle" style="margin-top: 40px; font-size: 1.2rem;">
-                    Seja pioneiro com o TakStud
-                </p>
-            </div>
+    <!-- ========== CTA ========== -->
+    <div class="cta-section">
+        <div class="container">
+            <h2>Transforme a Educação</h2>
+            <p>Junte-se a milhares de professores e pais que já confiam no TakStud</p>
+            <a href="#download" class="btn btn-primary">Começar Agora</a>
         </div>
     </div>
 
-    <div class="navigation">
-        <button class="nav-btn" onclick="previousSlide()">← Anterior</button>
-        <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
-    </div>
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 TakStud</h3>
+                    <p>A plataforma que conecta educação e família</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#features">Funcionalidades</a></li>
+                        <li><a href="#roles">Para Quem</a></li>
+                        <li><a href="#benefits">Benefícios</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="mailto:contato@takstud.com">contato@takstud.com</a></li>
+                        <li><a href="tel:+55">Suporte Técnico</a></li>
+                        <li><a href="#">Redes Sociais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TakStud. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let autoSlideTimer = null;
-        const SLIDE_INTERVAL = 30000; // 30 segundos
+        // Animações ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-        document.getElementById('totalSlides').textContent = String(totalSlides).padStart(2, '0');
-
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (n + totalSlides) % totalSlides;
-            slides[currentSlide].classList.add('active');
-            document.getElementById('currentSlide').textContent = String(currentSlide + 1).padStart(2, '0');
-            resetAutoSlideTimer();
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        function previousSlide() {
-            showSlide(currentSlide - 1);
-        }
-
-        function startAutoSlide() {
-            resetAutoSlideTimer();
-        }
-
-        function resetAutoSlideTimer() {
-            clearInterval(autoSlideTimer);
-            autoSlideTimer = setInterval(() => {
-                nextSlide();
-            }, SLIDE_INTERVAL);
-        }
-
-        // Navegação por teclado
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault();
-                nextSlide();
-            }
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                previousSlide();
-            }
-        });
-
-        // Navegação por toque (swipe)
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        document.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            if (touchEndX < touchStartX - swipeThreshold) nextSlide();
-            if (touchEndX > touchStartX + swipeThreshold) previousSlide();
-        }
-
-        // Parallax suave no mouse move
-        document.addEventListener('mousemove', (e) => {
-            const orbs = document.querySelectorAll('.gradient-orb');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-
-            orbs.forEach((orb, index) => {
-                const speed = (index + 1) * 20;
-                orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .role-card, .benefit-item, .screenshot-item').forEach(el => {
+            observer.observe(el);
         });
 
-        // Inicia o auto-slide quando a página carrega
-        window.addEventListener('load', () => {
-            startAutoSlide();
+        // Smooth scroll para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     </script>
 </body>
