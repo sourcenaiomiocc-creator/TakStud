@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TakStud - Plataforma Educacional para Professores e Pais</title>
+    <title>TakStud - Organização Escolar para Pais e Professores</title>
     <style>
         * {
             margin: 0;
@@ -16,8 +16,6 @@
             --secondary: #4f46e5;
             --accent: #ec4899;
             --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
             --text: #1f2937;
             --text-light: #6b7280;
             --bg-light: #f9fafb;
@@ -62,10 +60,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .logo-icon {
-            font-size: 2rem;
         }
 
         nav a {
@@ -365,10 +359,6 @@
             box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
         }
 
-        .btn-download:active {
-            transform: translateY(-1px);
-        }
-
         /* ========== CTA SECTION ========== */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -490,7 +480,6 @@
         .stagger-1 { animation-delay: 0.1s; }
         .stagger-2 { animation-delay: 0.2s; }
         .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
@@ -498,13 +487,11 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <span class="logo-icon">📚</span>
-                <span>TakStud</span>
+                <span>📚 TakStud</span>
             </div>
             <nav>
                 <a href="#features">Funcionalidades</a>
-                <a href="#roles">Para Quem</a>
-                <a href="#benefits">Benefícios</a>
+                <a href="#roles">Recursos</a>
                 <a href="#download">Download</a>
             </nav>
         </div>
@@ -512,38 +499,33 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero">
-        <h1>🚀 Bem-vindo ao TakStud</h1>
-        <p>A plataforma educacional que conecta professores, alunos e pais em um único lugar</p>
+        <h1>🚀 TakStud</h1>
+        <p>Organização escolar simples e prática para toda a família</p>
         <div class="cta-buttons">
             <a href="#download" class="btn btn-primary">📥 Baixar Agora</a>
-            <a href="#features" class="btn btn-secondary">Saber Mais</a>
+            <a href="#features" class="btn btn-secondary">Ver Mais</a>
         </div>
     </section>
 
     <!-- ========== FEATURES ========== -->
     <section id="features">
         <div class="container">
-            <h2>✨ Funcionalidades Principais</h2>
+            <h2>✨ O que TakStud oferece</h2>
             <div class="features-grid">
                 <div class="feature-card fade-in stagger-1">
-                    <div class="feature-icon">📢</div>
-                    <h3>Avisos</h3>
-                    <p>Professores podem enviar avisos importantes e os pais recebem notificações em tempo real</p>
+                    <div class="feature-icon">⏰</div>
+                    <h3>Horários das Aulas</h3>
+                    <p>Visualize todos os horários das aulas em um só lugar. Organizado e fácil de consultar</p>
                 </div>
                 <div class="feature-card fade-in stagger-2">
-                    <div class="feature-icon">✅</div>
-                    <h3>Tarefas</h3>
-                    <p>Organize e distribua tarefas com prazos, permitindo que pais acompanhem o progresso</p>
+                    <div class="feature-icon">📢</div>
+                    <h3>Avisos Importantes</h3>
+                    <p>Receba avisos sobre reuniões, feriados, pontos facultativos, eventos na escola e informações sobre aulas em dias específicos</p>
                 </div>
                 <div class="feature-card fade-in stagger-3">
                     <div class="feature-icon">📝</div>
-                    <h3>Provas</h3>
-                    <p>Gerencie provas, datas e resultados de forma centralizada e transparente</p>
-                </div>
-                <div class="feature-card fade-in stagger-4">
-                    <div class="feature-icon">⏰</div>
-                    <h3>Horários</h3>
-                    <p>Mantenha um calendário atualizado com aulas, eventos e datas importantes</p>
+                    <h3>Trabalhos e Provas</h3>
+                    <p>Acompanhe datas de entrega de trabalhos, provas e avaliações importantes</p>
                 </div>
             </div>
         </div>
@@ -556,26 +538,26 @@
             <div class="roles-container">
                 <div class="role-card fade-in">
                     <div class="role-icon">👨‍🏫</div>
-                    <h3>Para Professores</h3>
+                    <h3>Professores</h3>
                     <ul class="role-features">
-                        <li>Criar e gerenciar avisos</li>
-                        <li>Atribuir tarefas com prazos</li>
-                        <li>Registrar provas e notas</li>
-                        <li>Manter calendário atualizado</li>
-                        <li>Comunicação direta com responsáveis</li>
-                        <li>Relatórios de desempenho</li>
+                        <li>Registrar horários das aulas</li>
+                        <li>Enviar avisos de reuniões, feriados e pontos facultativos</li>
+                        <li>Avisar quando não há aula</li>
+                        <li>Comunicar eventos na escola</li>
+                        <li>Informar datas de provas</li>
+                        <li>Comunicar entregas de trabalhos</li>
                     </ul>
                 </div>
                 <div class="role-card fade-in" style="animation-delay: 0.2s;">
                     <div class="role-icon">👨‍👩‍👧</div>
-                    <h3>Para Pais</h3>
+                    <h3>Pais</h3>
                     <ul class="role-features">
-                        <li>Receber avisos importantes</li>
-                        <li>Acompanhar tarefas dos filhos</li>
-                        <li>Visualizar datas de provas</li>
-                        <li>Consultar horários escolares</li>
-                        <li>Acompanhar desempenho</li>
-                        <li>Comunicação com professores</li>
+                        <li>Consultar horários das aulas dos filhos</li>
+                        <li>Receber avisos de reuniões, feriados e pontos facultativos</li>
+                        <li>Saber quando não há aula</li>
+                        <li>Acompanhar eventos na escola</li>
+                        <li>Ver datas de provas que os filhos precisam fazer</li>
+                        <li>Acompanhar prazos de trabalhos para entregar</li>
                     </ul>
                 </div>
             </div>
@@ -585,48 +567,34 @@
     <!-- ========== BENEFITS ========== -->
     <section id="benefits">
         <div class="container">
-            <h2>💡 Por Que Usar TakStud?</h2>
+            <h2>💡 Por que usar TakStud?</h2>
             <div class="benefits">
                 <div class="benefit-item fade-in">
-                    <div class="benefit-icon">🔒</div>
+                    <div class="benefit-icon">📱</div>
                     <div>
-                        <h4>Seguro e Confiável</h4>
-                        <p>Seus dados estão protegidos com as melhores práticas de segurança</p>
+                        <h4>Simples e Intuitivo</h4>
+                        <p>Interface clara e fácil de usar para qualquer idade</p>
                     </div>
                 </div>
                 <div class="benefit-item fade-in" style="animation-delay: 0.1s;">
-                    <div class="benefit-icon">📱</div>
+                    <div class="benefit-icon">⚡</div>
                     <div>
-                        <h4>Acesso em Qualquer Lugar</h4>
-                        <p>Use no seu smartphone Android, sincronizado sempre</p>
+                        <h4>Rápido e Leve</h4>
+                        <p>Funciona bem mesmo em conexões mais lentas</p>
                     </div>
                 </div>
                 <div class="benefit-item fade-in" style="animation-delay: 0.2s;">
-                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-icon">🔔</div>
                     <div>
-                        <h4>Rápido e Intuitivo</h4>
-                        <p>Interface simples que qualquer um consegue usar sem dificuldade</p>
+                        <h4>Notificações</h4>
+                        <p>Receba avisos quando houver informações importantes</p>
                     </div>
                 </div>
                 <div class="benefit-item fade-in" style="animation-delay: 0.3s;">
-                    <div class="benefit-icon">🌐</div>
+                    <div class="benefit-icon">📋</div>
                     <div>
-                        <h4>Conectividade Total</h4>
-                        <p>Mantém professores, alunos e pais sempre conectados e informados</p>
-                    </div>
-                </div>
-                <div class="benefit-item fade-in" style="animation-delay: 0.4s;">
-                    <div class="benefit-icon">📊</div>
-                    <div>
-                        <h4>Relatórios Detalhados</h4>
-                        <p>Acompanhe o desempenho com gráficos e análises claras</p>
-                    </div>
-                </div>
-                <div class="benefit-item fade-in" style="animation-delay: 0.5s;">
-                    <div class="benefit-icon">💬</div>
-                    <div>
-                        <h4>Suporte 24/7</h4>
-                        <p>Equipe de suporte sempre disponível para ajudar</p>
+                        <h4>Organização</h4>
+                        <p>Mantenha todas as informações escolares organizadas em um só lugar</p>
                     </div>
                 </div>
             </div>
@@ -636,11 +604,11 @@
     <!-- ========== DOWNLOAD ========== -->
     <section id="download" class="alt-bg">
         <div class="container download-section">
-            <h2>📲 Baixe o TakStud para Android</h2>
+            <h2>📲 Baixe o TakStud</h2>
             <div class="download-box fade-in">
                 <div class="android-icon">🤖</div>
                 <h3>TakStud Android</h3>
-                <p>Acesse todas as funcionalidades direto no seu smartphone</p>
+                <p>Disponível para smartphones Android</p>
                 <a href="https://github.com/sourcenaiomiocc-creator/TakStud/releases/download/TakStud/TakStud.apk" class="btn-download">
                     📥 Baixar APK
                 </a>
@@ -654,8 +622,8 @@
     <!-- ========== CTA ========== -->
     <div class="cta-section">
         <div class="container">
-            <h2>Transforme a Educação</h2>
-            <p>Junte-se a milhares de professores e pais que já confiam no TakStud</p>
+            <h2>Organize a Vida Escolar</h2>
+            <p>Mantendo pais, professores e alunos sempre informados</p>
             <a href="#download" class="btn btn-primary">Começar Agora</a>
         </div>
     </div>
@@ -666,14 +634,13 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>📚 TakStud</h3>
-                    <p>A plataforma que conecta educação e família</p>
+                    <p>Organização escolar para todos</p>
                 </div>
                 <div class="footer-section">
                     <h3>Links</h3>
                     <ul>
                         <li><a href="#features">Funcionalidades</a></li>
-                        <li><a href="#roles">Para Quem</a></li>
-                        <li><a href="#benefits">Benefícios</a></li>
+                        <li><a href="#roles">Recursos</a></li>
                         <li><a href="#download">Download</a></li>
                     </ul>
                 </div>
@@ -681,14 +648,6 @@
                     <h3>Contato</h3>
                     <ul>
                         <li><a href="mailto:contato@takstud.com">contato@takstud.com</a></li>
-                        <li><a href="tel:+55">Suporte Técnico</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
                     </ul>
                 </div>
             </div>
