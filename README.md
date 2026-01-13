@@ -36,11 +36,13 @@ TakStud/
 
 ## 📝 Licença
 
-MIT License
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 🤝 Contribuindo
 
 Contribuições são bem-vindas! Abra uma issue ou pull request.
+
+Para mais informações sobre como contribuir, leia o guia em [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
